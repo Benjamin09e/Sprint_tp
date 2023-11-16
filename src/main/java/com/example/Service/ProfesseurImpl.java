@@ -47,6 +47,15 @@ public class ProfesseurImpl implements ProfesseurService{
             if (Objects.nonNull(prof.get().getSubject()) && !"".equalsIgnoreCase(p.getSubject())) {
                 originalProfesseur.setSubject(p.getSubject());
             }
+            if (Objects.nonNull(prof.get().getName()) && !"".equalsIgnoreCase(p.getName())) {
+                originalProfesseur.setName(p.getName());
+            }
+            if (Objects.nonNull(prof.get().getFirstname()) && !"".equalsIgnoreCase(p.getFirstname())) {
+                originalProfesseur.setFirstname(p.getFirstname());
+            }
+            if (Objects.nonNull(prof.get().getBirthdate()) && p.getBirthdate()!=null) {
+                originalProfesseur.setBirthdate(p.getBirthdate());
+            }
             return professeurRepository.save(originalProfesseur);
         }
         return null;
