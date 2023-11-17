@@ -11,12 +11,10 @@ const Welcome = () => {
     return (
         <div className="content_school">
             <div className="container_school">
-                <Navbar />
                 <Header />
                 <Classes />
                 <Professeurs />
                 <Etudiants />
-                <Footer/>
             </div>
         </div>
     )

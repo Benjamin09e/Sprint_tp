@@ -1,5 +1,14 @@
 .content_header{
-    background: #a9b1f3;
-    height: 49vh;
+    background: linear-gradient(180deg, #DF6FFB 0%, #26308C 100%);    background: #a9b1f3;
+    height: 29vh;
     width: 100%;
+}
+.content_header h1{
+    color: #090909;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
 }

@@ -4,7 +4,7 @@ p{
 }
 
 .content_etudiants{
-    background: #DF6FFB;
+    background: linear-gradient(180deg, #DF6FFB 0%, #26308C 100%);
     height: 70vh;
     width: 100%;
 }
