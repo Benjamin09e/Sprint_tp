@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.Entity.Classe;
+import com.example.Entity.Etudiant;
 import com.example.Entity.Professeur;
 import com.example.Repository.ClasseRepository;
 
@@ -61,6 +62,9 @@ public class ClasseImpl implements ClasseService{
             if (Objects.nonNull(classe.get().getName()) && !"".equalsIgnoreCase(p.getName())) {
                 originalclasse.setName(p.getName());
             }
+            if(Objects.nonNull(classe.get().getEtudiant())) {
+                originalclasse.setEtudiant(classe.get().getEtudiant());
+            }
             if (Objects.nonNull(classe.get().getProf().getId()) && profservice.getProfesseurById(p.getProf().getId())!=null) {
                 originalclasse.setProf(profservice.getProfesseurById(p.getProf().getId()));
             }
@@ -77,5 +81,17 @@ public class ClasseImpl implements ClasseService{
             return "Classe deleted successfully";
         }
         return "No such Classe in the database";
+    }
+
+  
+    public List<Etudiant> getClasseEtudiants(Long id) {
+        Optional<Classe> classe = classeRepository.findById(id);
+        return classe.map(Classe::getEtudiant).orElse(null);
+    }
+
+
+    public Professeur getClasseProf(Long id) {
+        Optional<Classe> classe = classeRepository.findById(id);
+        return classe.map(Classe::getProf).orElse(null);
     }
 }

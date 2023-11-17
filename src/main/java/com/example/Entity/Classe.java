@@ -1,11 +1,18 @@
 package com.example.Entity;
 
+import java.util.List;
+import java.util.Set;
+
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -26,9 +33,14 @@ public class Classe {
     @Column(name = "max")
     private int max;
     
+    
+    @OneToMany(mappedBy = "classe",cascade = CascadeType.ALL)
+    private List<Etudiant> etudiant;
 
 
   
+
+
 
 
     public Classe(long id, String name,int max) {
@@ -79,5 +91,15 @@ public class Classe {
 
     public void setMax(int max) {
         this.max = max;
+    }
+
+    
+    public List<Etudiant> getEtudiant() {
+        return etudiant;
+    }
+
+
+    public void setEtudiant(List<Etudiant> etudiants) {
+        this.etudiant = etudiants;
     }
 }
