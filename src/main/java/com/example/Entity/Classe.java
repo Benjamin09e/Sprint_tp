@@ -19,7 +19,7 @@ public class Classe {
     @Column(name = "name")
     private String name;
 
-    @OneToOne  @JoinColumn( name="professeurId" )
+    @OneToOne  @JoinColumn( name="professeur_id" )
     private Professeur prof;
 
 
