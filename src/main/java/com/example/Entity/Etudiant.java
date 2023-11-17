@@ -1,11 +1,11 @@
 package com.example.Entity;
 
-import java.sql.Date;
-
 import jakarta.persistence.*;
 
+import java.sql.Date;
+
 @Entity
-public class Professeur {
+public class Etudiant {
 
     // In your Professeur entity class
     @Id
@@ -13,11 +13,6 @@ public class Professeur {
     @Column(columnDefinition = "bigint")
     private Long id;
 
-    // In your Classe entity class
-    @ManyToOne
-    @JoinColumn(name = "professeur_id", referencedColumnName = "id", columnDefinition = "bigint")
-    private Professeur professeur;
-    
     @Column(name = "name")
     private String name;
 
@@ -28,35 +23,32 @@ public class Professeur {
     @Column(name = "birthDate")
     private Date birthdate;
 
-    @Column(name = "subject")
-    private String subject;
+    @Column(name = "note")
+    private String note;
+
+    @ManyToOne
+    @JoinColumn(name = "classe_id")
+    private Classe classe;
 
 
-    public Professeur() {
+    public Etudiant() {
     }
 
-    public Professeur(long id, String name, String firstName, Date birthDate, String subject) {
+    public Etudiant(Long id, String name, String firstname, Date birthdate, String note, Classe classe) {
         this.id = id;
         this.name = name;
-        this.firstname = firstName;
-        this.birthdate = birthDate;
-        this.subject = subject;
+        this.firstname = firstname;
+        this.birthdate = birthdate;
+        this.note = note;
+        this.classe = classe;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 
     public String getName() {
@@ -83,5 +75,19 @@ public class Professeur {
         this.birthdate = birthdate;
     }
 
+    public String getNote() {
+        return note;
+    }
 
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public Classe getClasse() {
+        return classe;
+    }
+
+    public void setClasse(Classe classe) {
+        this.classe = classe;
+    }
 }
