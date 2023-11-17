@@ -24,17 +24,16 @@ public class EtudiantController {
         return etudiantService.getEtudiantById(id);
     }
 
-    @PostMapping
+    @PostMapping("/creerEtudiant")
     public Etudiant createEtudiant(@RequestBody Etudiant etudiant) {
         return etudiantService.createEtudiant(etudiant);
     }
-
-    @PutMapping("/{id}")
+    @PostMapping("/update/{id}")
     public Etudiant updateEtudiant(@PathVariable Long id, @RequestBody Etudiant etudiant) {
         return etudiantService.updateEtudiant(id, etudiant);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteEtudiant(@PathVariable Long id) {
         etudiantService.deleteEtudiant(id);
     }
