@@ -1,0 +1,24 @@
+p{
+    margin: none;
+    padding: none;
+}
+
+.content_school {
+    height: max-content;
+    width: 100%;
+}
+
+/*
+.content_school .container_school {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content_school .container_school h1{
+    color: aliceblue;
+    font-size: 24;
+    padding-top: 30px;
+}
+
+*/

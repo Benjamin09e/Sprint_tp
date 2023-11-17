@@ -1,0 +1,49 @@
+p{
+    margin: none;
+    padding: none;
+}
+
+.content_classes {
+    background: #ffffff;
+    height: 70vh;
+    width: 100%;
+}
+
+.content_classes p {
+    color: #090909;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+}
+
+.container_classes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 70vh;
+
+}
+
+.container_classes .part_left {
+    width: 50%;
+}
+
+.container_classes .part_left img {
+    width: 50%;
+}
+
+.container_classes .part_right {
+    width: 50%;
+}
+
+.container_classes .part_right button {
+    padding: 12px 12px;
+    margin: 5px 7px;
+    border-radius: 20px;
+    background: #DA722C;
+    box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
